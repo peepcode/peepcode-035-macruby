@@ -10,7 +10,7 @@ class TRTableDelegate
   def tableView(tableView, objectValueForTableColumn:column, row:row)
     NSLog("Asked for row: #{row} column: #{column}")
     if row < parent.updates.length
-      return parent.updates[row].valueForKey(column.identifier)
+      return parent.updates[row].valueForKey(column.identifier.to_sym)
     end
     nil
   end
