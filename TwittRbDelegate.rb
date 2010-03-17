@@ -33,7 +33,7 @@ class TwittRbDelegate
   end
   
   def retrieveTweets(sender)
-    url = NSURL.URLWithString("https://twitter.com/statuses/friends_timeline.xml")
+    url = NSURL.URLWithString("http://twitter.com/statuses/friends_timeline.xml")
     request = NSMutableURLRequest.requestWithURL(url)
     auth_token = Base64.encode64("#{username}:#{password}").strip
     request.setValue("Basic #{auth_token}",
